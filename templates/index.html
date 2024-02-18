@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Prediction</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 4em;
+        margin-bottom: 50px;
+      }
+
+      form {
+        border: 1px solid #ccc;
+        padding: 50px;
+        border-radius: 20px;
+        margin: 40px auto; /* Center the form horizontally */
+        max-width: 450px; /* Limit the width to avoid stretching */
+      }
+
+      label {
+        display: flex;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: 1px solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #449a44;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Diabetes Prediction</h1>
+    <form action="/predict" method="post">
+      <label for="pregnancies">Pregnancies:</label>
+      <input type="text" name="pregnancies" required /><br />
+
+      <label for="glucose">Glucose:</label>
+      <input type="text" name="glucose" required /><br />
+
+      <label for="blood_pressure">Blood Pressure:</label>
+      <input type="text" name="blood_pressure" required /><br />
+
+      <label for="skin_thickness">Skin Thickness:</label>
+      <input type="text" name="skin_thickness" required /><br />
+
+      <label for="insulin">Insulin:</label>
+      <input type="text" name="insulin" required /><br />
+
+      <label for="bmi">BMI:</label>
+      <input type="text" name="bmi" required /><br />
+
+      <label for="diabetes_pedigree_function"
+        >Diabetes Pedigree Function:</label
+      >
+      <input type="text" name="diabetes_pedigree_function" required /><br />
+
+      <label for="age">Age:</label>
+      <input type="text" name="age" required /><br />
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+  </body>
+</html>
