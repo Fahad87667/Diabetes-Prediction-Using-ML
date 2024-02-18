@@ -1,7 +1,7 @@
-#requirements.txt
+
 templates 
 app.py 
-diabetes.csv
+#diabetes.csv
 Diabetes_model.pkl
 Diabetes_Prediction.ipynb
 Model.py
