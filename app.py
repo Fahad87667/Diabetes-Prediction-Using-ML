@@ -10,8 +10,9 @@ app = Flask(__name__)
 with open('Diabetes_model.pkl', 'rb') as model_file:
     classifier = pickle.load(model_file)
 
-# StandardScaler for input data
-scaler = StandardScaler()
+# Load the scaler
+with open('Scaler.pkl', 'rb') as scaler_file:
+    scaler = pickle.load(scaler_file)
 
 @app.route('/')
 def home():
@@ -26,9 +27,9 @@ def predict():
             'insulin', 'bmi', 'diabetes_pedigree_function', 'age'
         ]]
         
-        # Standardize the input data using the previously fitted scaler
+        # Standardize the input data using the loaded scaler
         input_data = np.array(input_features).reshape(1, -1)
-        standardized_input = scaler.fit_transform(input_data)  # Use transform instead of fit_transform
+        standardized_input = scaler.transform(input_data)
 
         # Make prediction
         prediction = classifier.predict(standardized_input)
