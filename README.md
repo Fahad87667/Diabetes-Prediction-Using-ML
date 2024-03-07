@@ -5,6 +5,7 @@ This project implements a Diabetes Prediction system using Support Vector Machin
 ## Project Structure
 
 - `app.py`: This file contains the Flask web application for user interaction.
+- `app1.py`: This file contains the streamlit web application for user interaction.
 - `Diabetes_model.pkl`: The trained SVM model saved using pickle.
 - `diabetes.csv`: The dataset used for training the machine learning model.
 
@@ -18,17 +19,19 @@ This project implements a Diabetes Prediction system using Support Vector Machin
 
 2. Install dependencies:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. Run the Flask application:
 
-    ```bash
-    python app.py
-    ```
+   ```bash
+   python app.py
+   ```
 
 ## Usage
+
+- [SugarGuard-Pro](https://sugarguardpro.streamlit.app/)
 
 Input the required features (e.g., pregnancies, glucose, blood pressure) in the provided form.
 Click the "Predict" button to get the prediction result.
