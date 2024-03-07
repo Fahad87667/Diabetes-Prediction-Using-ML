@@ -20,7 +20,7 @@ st.set_page_config(
 def main():
     
     st.title('Diabetes Prediction App')
-    st.sidebar.header('Results ⏳')
+    # st.sidebar.header('Results ⏳')
 
     # Get user input from the form
     pregnancies = st.number_input('Number of Pregnancies 👶', min_value=0, value=0)
@@ -41,7 +41,7 @@ def main():
         prediction = classifier.predict(standardized_input)
 
         # Display the prediction result in the sidebar
-        st.sidebar.subheader('Prediction 🔮:')
+        st.sidebar.subheader('Prediction Result 🔮:')
         if prediction[0] == 0:
             result = 'Person is not diabetic.'
             st.sidebar.success(result)
