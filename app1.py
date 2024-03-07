@@ -18,8 +18,9 @@ st.set_page_config(
 )
 
 def main():
+    
     st.title('Diabetes Prediction App')
-    # st.sidebar.header('Results ⏳')
+    st.sidebar.header('Results ⏳')
 
     # Get user input from the form
     pregnancies = st.number_input('Number of Pregnancies 👶', min_value=0, value=0)
