@@ -41,7 +41,7 @@ def main():
         prediction = classifier.predict(standardized_input)
 
         # Display the prediction result in the sidebar
-        st.sidebar.subheader('Prediction Result 🔮:')
+        st.sidebar.subheader('Prediction 🔮:')
         if prediction[0] == 0:
             result = 'Person is not diabetic.'
             st.sidebar.success(result)
